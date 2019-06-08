@@ -30,7 +30,7 @@ function worker(obj, compilation) {
     let json = propertiesToJson(filea, obj.options);
     filea.forEach(file => {
       file = path.resolve(compilation.compiler.context, file);
-      compilation.fileDependencies.push(file);
+      compilation.fileDependencies.add(file);
     });
 
     compilation.assets[obj.output] = {
